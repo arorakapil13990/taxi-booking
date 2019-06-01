@@ -39,19 +39,4 @@ public class UtilServiceTest {
         Assert.assertEquals(date, requestDate);
     }
 
-//    @Test
-//    public void parseDateTest() throws Exception {
-//        String requestDate = "May 1, 2019";
-//        String formattedDate = "2019-05-01";
-//        final Date date = new GregorianCalendar(2019, new GregorianCalendar().MAY, 1).getTime();
-//
-//        when(requestDateFormatter.parse(requestDate)).thenReturn(date);
-//        when(dateFormatter.format(date)).thenReturn(formattedDate);
-//        when(dateFormatter.parse(formattedDate)).thenReturn(date);
-//
-//
-//        Date actualDate = utilService.parseDate(requestDate);
-//
-//        Assert.assertSame(date, actualDate);
-//    }
 }

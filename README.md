@@ -18,12 +18,16 @@ Following is the url, hitting which would return list of cancellation rates in J
 <ul>
   <li><h4>localhost:8080/cancellationRate?start=May 1, 2019&end=May 3, 2019</h4>
     </li>
+  
+  <li>Following is the result of the aforementioned URL :: 
+  <br/>
+  <br/>
+<li><p>[{ <br/>{<br/>"day": "2019-05-01",<br/>    "cancellationRate": "0.33"<br/>},<br/>{<br/>    "day": "2019-05-02",<br/>    "cancellationRate": "0.00"<br/>
+  },<br/>{<br/>    "day": "2019-05-03",<br/>    "cancellationRate": "0.50"<br/>}]
+  </p></li>
+  
+  </li>
 </ul>
-
-![alt text](https://github.com/arorakapil13990/kmart/blob/master/swagger1.jpg)
-
-![alt text](https://github.com/arorakapil13990/kmart/blob/master/swagger2.jpg)
-
 <h3>Documentation</h3>
 <ul>
 Swagger - Documentation & Testing <b>http://localhost:8080/swagger-ui.html</b>
@@ -47,12 +51,18 @@ For building and running the application you need:<br>
 
 <h3>Startup data</h3>
 <ul>
-Flyway will help in inserting initial trip related data in H2 database on start of the Spring Boot application. It will create two tables, one for trip details and other for user details, holding respective data.
+  Flyway will be used to create schema for following tables ::
+  -- trip_detail
+  -- user_detail
+  Flyway will also create the startup data.
 </ul> 
 
 <h3>Test cases</h3>
 <ul>
-Test cases covering unit and integrated aspects of the taxi booking applicating ensuring 100% testabilty of the code, mainly for Controller and Service classes. 
+Application has following test cases covering 100% of application
+  <li>Unit test cases</li>
+  <li>Controller test cases</li>
+  <li>Integration test cases</li>
 </ul>
 
 <h3>Running test cases and checking coverage</h3>
@@ -61,9 +71,9 @@ Test cases covering unit and integrated aspects of the taxi booking applicating 
 <li>Run following command to generate test coverage in html format <b>./mvnw clean site</b></li>
 </ul>
 
-<h3>packages</h3>
+<h3>Layers and packaging of application</h3>
 <ul>
-<li><b>config</b> — COntains appropriate configuration required application wide</li>
+<li><b>config</b> — Contains appropriate configuration required application wide</li>
 <li><b>constants</b> — COntains all constants used application wide</li>
 <li><b>entity</b> — to hold our entities</li>
 <li><b>repository</b> — to communicate with the database</li>
@@ -76,8 +86,7 @@ Test cases covering unit and integrated aspects of the taxi booking applicating 
 <li><b>resources/application.properties</b> - It contains application-wide properties. Spring reads the properties defined in this file to configure your application. We can define server’s default port, server’s context path, database URLs etc, in this file.</li>
 <li><b>test/</b> - contains unit and integration tests</li>
 <li><b>test/resources/migration</b> - static sql data used for test cases</li>
-<li><b>resources/application.properties</b> - It contains application properties for executing test cases. To use this file for running, we can set spring property as <b>mvn spring-boot:run -Dspring.profiles.active=test</b></li>
-<li><b>pom.xml</b> - contains all the project dependencies</li>
+<li><b>resources/application.properties</b> - It contains configurable application variables</li>
 
 
 

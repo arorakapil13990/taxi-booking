@@ -24,12 +24,13 @@ public class TripController {
     @ApiModelProperty(notes = "Name of the Service Class", name = "service")
     private final UserService service;
 
+    @Autowired
     public TripController(UserService service) {
         this.service = service;
     }
 
 
-    @ApiOperation(value = "Return list of Cancellation Rates for the give range of dates ", response = Iterable.class, tags = "cancellationRate")
+    @ApiOperation(value = "Return list of Cancellation Rates for the given range of dates ", response = Iterable.class, tags = "cancellationRate")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success|OK"),
             @ApiResponse(code = 404, message = "not found!!!")})
